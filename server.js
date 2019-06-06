@@ -40,10 +40,9 @@ connection.on('error', (err) => {
 });
 
 // Start the server
-app.set('port', process.env.PORT || 22);
-app.set('host', process.env.HOST || '202.166.197.237');
+
 
 app.listen(3000);
-  console.log("Express server listening on port " + app.get('port'));
+  console.log("Express server listening on port 3000");
 
 
