@@ -6,6 +6,7 @@ var routes = express.Router();
 
 console.log('Routes')
 routes.get('/get-locations', gpsController.getLocations)
+routes.get('/get-bus', gpsController.getBuses)
 routes.post('/add-data',gpsController.addData)
 
 module.exports = routes
