@@ -48,6 +48,6 @@ connection.on('error', (err) => {
 
 */
 app.listen(PORT);
-  console.log("Express server listening on port 3000");
+  console.log("Express server listening on port:",PORT);
 
 
