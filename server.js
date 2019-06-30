@@ -8,6 +8,7 @@ var cors        = require('cors');
 var routes      = require('./routes');
 var records     = require('./models/record');
 var gpsController = require('./controllers/GpsController');
+const PORT = process.env.PORT;
 var app = express();
 app.use(cors());
 
@@ -46,7 +47,7 @@ connection.on('error', (err) => {
 // Start the server
 
 */
-app.listen();
+app.listen(PORT);
   console.log("Express server listening on port 3000");
 
 
