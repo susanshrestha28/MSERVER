@@ -29,7 +29,7 @@ passport.use(passportMiddleware);
 //app.use('/api', routes)
 app.use('/api',routes);
 
-/* mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true});
+ mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true});
 
 const connection = mongoose.connection;
 
@@ -43,7 +43,7 @@ connection.on('error', (err) => {
 });
 
 // Start the server
-*/
+
 
 app.listen(PORT);
   console.log("Express server listening on port:",PORT);
