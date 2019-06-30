@@ -25,7 +25,7 @@ passport.use(passportMiddleware);
 
 //app.use('/api', routes)
 app.use('/api',(req,res)=>{
-    console.log(hello);
+    console.log("hello");
 })
 
 /* mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true});
