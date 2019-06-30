@@ -23,15 +23,17 @@ app.use(passport.initialize());
 var passportMiddleware = require('./models/passport');
 passport.use(passportMiddleware);
 
-app.use('/api', routes)
+//app.use('/api', routes)
+app.use('/api',(req,res)=>{
+    console.log(hello);
+})
 
-
-mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true});
+/* mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true});
 
 const connection = mongoose.connection;
 
 connection.once('open', () => {
-    console.log('MongoDB database connection established successfully!');
+  console.log('MongoDB database connection established successfully!');
 });
 
 connection.on('error', (err) => {
@@ -41,7 +43,7 @@ connection.on('error', (err) => {
 
 // Start the server
 
-
+*/
 app.listen(3000);
   console.log("Express server listening on port 3000");
 
