@@ -12,7 +12,9 @@ var app = express();
 app.use(cors());
 
 app.get('/', function(req, res) {
-//return res.send('Hello! The API is at http://202.166.197.237:' + port + '/location');
+    console.log("Hello")
+return res.send('Hello! The API is at http://202.166.197.237:' + port + '/location');
+
 });
 // get our request parameters
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -44,7 +46,7 @@ connection.on('error', (err) => {
 // Start the server
 
 */
-app.listen(3000);
+app.listen();
   console.log("Express server listening on port 3000");
 
 
