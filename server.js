@@ -29,15 +29,9 @@ passport.use(passportMiddleware);
 //app.use('/api', routes)
 app.use('/api',routes);
 
- mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true},(err)=>{
-     if(!err){
-         console.log("mongodb connected sucessully");
-     }else{
-         console.log("Error in mongodb connection",err);
-     }
- });
+ mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true});
 
-/*const connection = mongoose.connection;
+const connection = mongoose.connection;
 
 connection.once('open', () => {
   console.log('MongoDB database connection established successfully!');
@@ -50,7 +44,7 @@ connection.on('error', (err) => {
 
 // Start the server
 
-*/
+
 app.listen(PORT);
   console.log("Express server listening on port:",PORT);
 
