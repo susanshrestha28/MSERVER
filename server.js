@@ -13,7 +13,7 @@ var app = express();
 app.use(cors());
 
 app.get('/', function(req, res) {
-   // console.log("Hello")
+   console.log("You are inside server.js")
 //return res.send('Hello! The API is at http://202.166.197.237:' + port + '/location');
 
 });
