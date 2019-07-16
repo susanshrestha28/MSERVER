@@ -29,18 +29,18 @@ passport.use(passportMiddleware);
 //app.use('/api', routes)
 app.use('/api',routes);
 
- mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true});
+ //mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true});
 
-const connection = mongoose.connection;
+//const connection = mongoose.connection;
 
-connection.once('open', () => {
-  console.log('MongoDB database connection established successfully!');
-});
+//connection.once('open', () => {
+  //console.log('MongoDB database connection established successfully!');
+///});
 
-connection.on('error', (err) => {
-    console.log("MongoDB connection error. Please make sure MongoDB is running. " + err);
-    process.exit();
-});
+//connection.on('error', (err) => {
+   // console.log("MongoDB connection error. Please make sure MongoDB is running. " + err);
+   // process.exit();
+//});
 
 // Start the server
 
