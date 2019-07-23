@@ -34,6 +34,7 @@ record.save();
 
 exports.datas =  function(req, res) {
     console.log("Saving datas send from aurdinogprs ....")
+    console.log(req);
           const record =new DatasModel(req.body);
   record.save();
           
