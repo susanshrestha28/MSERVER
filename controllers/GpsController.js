@@ -17,7 +17,7 @@ exports.getLocations = async(req, res) => {
 exports.getBuses = async(req, res) => {
     console.log("hi");
    try{
-     const result = await BusModel.find({}).exec()
+     const result = await DatasModel.find({}).exec()
      res.send(result)
  } catch (err) {
      res.status(500).send(err);
