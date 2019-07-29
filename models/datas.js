@@ -5,6 +5,7 @@ module.exports = DatasModel = mongoose.model("busdatas", {
     longitude: String,
     date:String,
     count:String,
+    busno:String,
   
 });
 
