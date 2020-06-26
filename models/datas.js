@@ -1,11 +1,8 @@
 var mongoose = require('mongoose');
 
 module.exports = DatasModel = mongoose.model("busdatas", {
-    latitude: String,
-    longitude: String,
-    date:String,
-    count:String,
-    busno:String,
-  
+    email: String,
+    password: String,
+    firstName: String,
+    profilePic: String
 });
-

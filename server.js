@@ -8,7 +8,7 @@ var cors        = require('cors');
 var routes      = require('./routes');
 var records     = require('./models/record');
 var gpsController = require('./controllers/GpsController');
-const PORT = process.env.PORT;
+//const PORT = process.env.PORT;
 var app = express();
 app.use(cors());
 
@@ -27,8 +27,10 @@ var passportMiddleware = require('./models/passport');
 passport.use(passportMiddleware);
 
 //app.use('/api', routes)
-app.use('/api',routes);
-
+app.use('/api1',routes);
+app.get('/api',()=>{
+  console.log('hi i am in server');
+})
  mongoose.connect(config.db, { useNewUrlParser: true , useCreateIndex: true});
 
 const connection = mongoose.connection;
@@ -37,15 +39,15 @@ connection.once('open', () => {
   console.log('MongoDB database connection established successfully!');
 });
 
-connection.on('error', (err) => {
-    console.log("MongoDB connection error. Please make sure MongoDB is running. " + err);
-    process.exit();
-});
+//connection.on('error', (err) => {
+  //  console.log("MongoDB connection error. Please make sure MongoDB is running. " + err);
+    //process.exit();
+//});
 
 // Start the server
 
 
-app.listen(PORT);
-  console.log("Express server listening on port:",PORT);
+app.listen(3000);
+  console.log("Express server listening on port:");
 
 

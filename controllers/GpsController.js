@@ -1,7 +1,9 @@
 var UserModel = require('../models/user');
 var Records = require('../models/record');
 var BusModel = require('../models/bus');
-var DatasModel = require('../models/datas'); 
+var DatasModel = require('../models/datas');
+var email
+var password 
 exports.getLocations = async(req, res) => {
    console.log("hello");
    try{
@@ -15,10 +17,20 @@ exports.getLocations = async(req, res) => {
 }
 }
 exports.getBuses = async(req, res) => {
-    console.log("hi");
    try{
      const result = await DatasModel.find({}).exec()
-     res.send(result)
+     console.log(result[0].email)
+     console.log(result[0].password)
+     console.log(result[0].firstName)
+     console.log(result[0].profilePic)
+    //  if(String(result[0].email) == String(email) && String(result[0].password) == String(password)){
+    //      console.log('user matched');
+    //      var json = [{status:'okay'}];
+    //  }else{
+    //      var json = [{staus:'bad'}];
+    //  }
+    //  res.send(json)
+    res.send(result);
  } catch (err) {
      res.status(500).send(err);
  }
@@ -34,9 +46,12 @@ record.save();
 
 exports.datas =  function(req, res) {
     console.log("Saving datas send from aurdinogprs ....")
-    console.log(req);
-          const record =new DatasModel(req.body);
-  record.save();
+    console.log(req.body.email);
+    console.log(req.body.password);
+    email = req.body.email;
+    password = req.body.password
+      //    const record =new DatasModel(req.body);
+  //record.save();
           
-      res.send(record)
+    //  res.send(record)
   }
